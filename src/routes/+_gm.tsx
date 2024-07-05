@@ -9,6 +9,9 @@ export const Route = createFileRoute("/_gm")({
 function Layout() {
   return (
     <>
+      <span className="sr-only" id="top">
+        Top
+      </span>
       <div className="border-border border-b p-2">
         <div className="container flex items-center gap-2">
           <Button variant="ghost" asChild className="font-bold font-handwriting text-2xl [&.active]:text-primary">

@@ -16,6 +16,8 @@ import { useViewerStore } from "~/stores/use-viewer-store";
 export function ViewerControls() {
   const viewerStore = useViewerStore();
 
+  // TODO: Add Presentation API support
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
@@ -28,7 +30,9 @@ export function ViewerControls() {
         <DropdownMenuSeparator />
         <DropdownMenuRadioGroup
           value={viewerStore.viewerMode}
-          onValueChange={(mode: "timeline" | "location") => viewerStore.changeViewerMode(mode)}
+          onValueChange={(mode) =>
+            mode === "timeline" || mode === "location" ? viewerStore.changeViewerMode(mode) : null
+          }
         >
           <DropdownMenuRadioItem value="timeline">Timeline</DropdownMenuRadioItem>
           <DropdownMenuRadioItem value="location">Location</DropdownMenuRadioItem>

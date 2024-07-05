@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useViewerStore } from "~/stores/use-viewer-store";
 
-export const Route = createFileRoute("/viewer")({
+export const Route = createFileRoute("/viewer/")({
   component: Viewer,
 });
 

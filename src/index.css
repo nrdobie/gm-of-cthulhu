@@ -53,6 +53,9 @@
     * {
       @apply border-border;
     }
+    html {
+      @apply scroll-smooth scroll-pt-8;
+    }
     body {
       @apply bg-background text-foreground;
     }

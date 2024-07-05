@@ -12,7 +12,9 @@
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.1",
     "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-select": "^2.1.1",
     "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-switch": "^1.1.0",
     "@tanstack/react-router": "^1.43.12",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -22,6 +24,7 @@
     "react-dom": "^18.3.1",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
+    "timm": "^1.7.1",
     "zustand": "^4.5.4",
     "zustand-sync-tabs": "^0.2.1"
   },

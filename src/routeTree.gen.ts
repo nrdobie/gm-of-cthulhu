@@ -11,20 +11,20 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/+__root'
-import { Route as ViewerImport } from './routes/+viewer_'
 import { Route as GmImport } from './routes/+_gm'
+import { Route as ViewerIndexImport } from './routes/+viewer/+index'
 import { Route as GmIndexImport } from './routes/+_gm/+index'
 import { Route as GmTimelineIndexImport } from './routes/+_gm/+timeline/+index'
 
 // Create/Update Routes
 
-const ViewerRoute = ViewerImport.update({
-  path: '/viewer',
+const GmRoute = GmImport.update({
+  id: '/_gm',
   getParentRoute: () => rootRoute,
 } as any)
 
-const GmRoute = GmImport.update({
-  id: '/_gm',
+const ViewerIndexRoute = ViewerIndexImport.update({
+  path: '/viewer/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -49,19 +49,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GmImport
       parentRoute: typeof rootRoute
     }
-    '/viewer': {
-      id: '/viewer'
-      path: '/viewer'
-      fullPath: '/viewer'
-      preLoaderRoute: typeof ViewerImport
-      parentRoute: typeof rootRoute
-    }
     '/_gm/': {
       id: '/_gm/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof GmIndexImport
       parentRoute: typeof GmImport
+    }
+    '/viewer/': {
+      id: '/viewer/'
+      path: '/viewer'
+      fullPath: '/viewer'
+      preLoaderRoute: typeof ViewerIndexImport
+      parentRoute: typeof rootRoute
     }
     '/_gm/timeline/': {
       id: '/_gm/timeline/'
@@ -77,7 +77,7 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren({
   GmRoute: GmRoute.addChildren({ GmIndexRoute, GmTimelineIndexRoute }),
-  ViewerRoute,
+  ViewerIndexRoute,
 })
 
 /* prettier-ignore-end */
@@ -89,7 +89,7 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "+__root.tsx",
       "children": [
         "/_gm",
-        "/viewer"
+        "/viewer/"
       ]
     },
     "/_gm": {
@@ -99,12 +99,12 @@ export const routeTree = rootRoute.addChildren({
         "/_gm/timeline/"
       ]
     },
-    "/viewer": {
-      "filePath": "+viewer_.tsx"
-    },
     "/_gm/": {
       "filePath": "+_gm/+index.tsx",
       "parent": "/_gm"
+    },
+    "/viewer/": {
+      "filePath": "+viewer/+index.tsx"
     },
     "/_gm/timeline/": {
       "filePath": "+_gm/+timeline/+index.tsx",
