@@ -1,0 +1,10 @@
+{
+	"recommendations": [
+		"csstools.postcss",
+		"yoavbls.pretty-ts-errors",
+		"lokalise.i18n-ally",
+		"editorconfig.editorconfig",
+		"biomejs.biome",
+		"bradlc.vscode-tailwindcss"
+	]
+}
