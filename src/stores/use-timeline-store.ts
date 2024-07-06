@@ -7,7 +7,7 @@ import type { DeepPartial } from "~/types/deep-partial";
 import type { TimelineEvent, TimelineEventData } from "./timeline";
 
 export type State = {
-  greateOldOneName: string | null;
+  greatOldOneName: string | null;
   activeEvent: TimelineEvent | null;
   events: Record<TimelineEvent, TimelineEventData>;
 };
@@ -24,7 +24,7 @@ export const useTimelineStore = create<State & Actions>()(
       syncTabs(
         (set) => ({
           ...shubNiggurathTimeline,
-          setGreatOldOneName: (name: string | null) => set({ greateOldOneName: name }),
+          setGreatOldOneName: (name: string | null) => set({ greatOldOneName: name }),
           setActiveEvent: (event: TimelineEvent | null) => set({ activeEvent: event }),
           updateEvent: (event: TimelineEvent, data: DeepPartial<TimelineEventData>) =>
             set((state) => {

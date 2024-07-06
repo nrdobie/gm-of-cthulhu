@@ -2,7 +2,7 @@ import { TimelineCatalystType, TimelineEvent, TimelineRating } from "~/stores/ti
 import type { State } from "~/stores/use-timeline-store";
 
 export const shubNiggurathTimeline: State = {
-  greateOldOneName: "Shub-Niggurath",
+  greatOldOneName: "Shub-Niggurath",
   activeEvent: null,
   events: {
     [TimelineEvent.EventOne]: {

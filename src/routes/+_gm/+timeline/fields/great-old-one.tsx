@@ -3,7 +3,10 @@ import { Label } from "~/components/ui/label";
 import { useTimelineStore } from "~/stores/use-timeline-store";
 
 export function GreatOldOne() {
-  const store = useTimelineStore();
+  const store = useTimelineStore((state) => ({
+    greateOldOneName: state.greatOldOneName,
+    setGreatOldOneName: state.setGreatOldOneName,
+  }));
 
   return (
     <div className="flex flex-col gap-4">

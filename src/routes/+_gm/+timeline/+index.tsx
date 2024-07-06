@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { TimelineEvent } from "~/stores/timeline";
+import { ActiveEvent } from "./fields/active-event";
 import { EventEditor } from "./fields/event-editor";
 import { GreatOldOne } from "./fields/great-old-one";
 import { TableOfContents } from "./table-of-contents";
@@ -15,6 +16,7 @@ function Timeline() {
       <TableOfContents />
       <div className="space-y-16">
         <GreatOldOne />
+        <ActiveEvent />
         <EventEditor type={TimelineEvent.EventOne} />
         <EventEditor type={TimelineEvent.EventTwo} />
         <EventEditor type={TimelineEvent.EventThree} />
